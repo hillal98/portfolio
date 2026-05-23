@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Hillal Achoui — Consultant Technique & Développeur Full Stack. Expert Documentum, Java, Spring Boot, DevOps. Missions freelance Île-de-France."/>
+  <meta name="keywords" content="consultant documentum, développeur java, spring boot, devops, freelance, ECM, TMA"/>
+  <meta name="author" content="Hillal Achoui"/>
+  <meta property="og:title" content="Hillal Achoui — Consultant Technique & Développeur"/>
+  <meta property="og:description" content="Expert Documentum & Développeur Full Stack. Solutions robustes de la gestion de contenu au développement web/mobile."/>
+  <meta property="og:type" content="website"/>
+  <title>Hillal Achoui — Consultant Technique & Développeur</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  
+  <!-- Smooth Scroll + Scroll Padding pour header fixe -->
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    section { scroll-margin-top: 80px; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    
+    /* Animations subtiles */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    
+    /* Hover effects */
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+    .skill-tag:hover { background: #3b82f6; color: white; }
+    
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+    #mobile-menu.hidden { max-height: 0; opacity: 0; pointer-events: none; }
+    #mobile-menu:not(.hidden) { max-height: 300px; opacity: 1; pointer-events: auto; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="#hero" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+			<span class="text-blue-600">Hillal ACHOUI</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Services</a>
+          <a href="#skills" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Compétences</a>
+          <a href="#experience" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Expériences</a>
+          <a href="#certifications" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Certifications</a>
+          <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">Me contacter</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#services" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Services</a>
+        <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Compétences</a>
+        <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Expériences</a>
+        <a href="#certifications" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Certifications</a>
+        <a href="#contact" class="block py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-center">Me contacter</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+        Hillal Achoui<br/>
+        <span class="text-blue-600">Consultant Technique</span> — Île-de-France
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+        Expert <span class="font-mono bg-blue-100 text-blue-800 px-2 py-1 rounded">Documentum</span> & Développeur Full Stack.<br/>
+        Je conçois, déploie et maintiens des solutions informatiques robustes — de la gestion de contenu d'entreprise (ECM) au développement d'applications web et mobiles sur mesure.
+      </p>
+      
+      <!-- Tech Stack Badges -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Documentum D2</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Java</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Spring Boot</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">TypeScript</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">PHP</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Jenkins</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Ansible</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Linux RHEL 8</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">Oracle</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-mono">PostgreSQL</span>
+      </div>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+          Mes services
+        </a>
+        <a href="#experience" class="bg-white hover:bg-gray-50 text-gray-900 font-medium py-3 px-8 rounded-lg border border-gray-300 transition-colors duration-200">
+          Mon parcours
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Services</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Ce que je peux faire pour vous.<br/>
+          Fort de missions en contexte industriel (EDF, ORANO, Mairie de Paris), j'interviens sur des projets techniques exigeants avec rigueur et autonomie.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-300 animate-fade-in-up">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Conseil ECM / Documentum</h3>
+          <p class="text-gray-600">Intégration, migration, configuration D2 et TMA sur les solutions Documentum, Nuxeo, Webtop, xPlore et CTS.</p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-300 animate-fade-in-up delay-100">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Création de sites web</h3>
+          <p class="text-gray-600">Sites vitrines, portfolios et landing pages modernes avec Laravel, Spring Boot ou solutions headless — du design au déploiement.</p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-300 animate-fade-in-up delay-200">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Applications web & APIs</h3>
+          <p class="text-gray-600">Développement d'outils métiers, APIs REST / SOAP et dashboards en Java / TypeScript / PHP adaptés à vos processus.</p>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-300 animate-fade-in-up">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Applications mobiles</h3>
+          <p class="text-gray-600">Applications cross-platform iOS & Android fluides, intégrées à vos systèmes existants.</p>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-300 animate-fade-in-up delay-100">
+          <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">DevOps & Automatisation</h3>
+          <p class="text-gray-600">Pipelines CI/CD avec Jenkins, déploiements automatisés via Ansible, gestion de versions Git/GitLab en environnement Linux.</p>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-300 animate-fade-in-up delay-200">
+          <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Maintenance & Support TMA</h3>
+          <p class="text-gray-600">Gestion des tickets correctifs et évolutifs, analyse d'incidents, suivi des performances de vos applications en production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Compétences</h2>
+        <p class="text-lg text-gray-600">Un stack technique polyvalent et solide.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- ECM / Documentum -->
+        <div class="animate-fade-in-up">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+            ECM / Documentum
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Documentum D2</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">D2-config</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Webtop</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Dqman</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">xPlore</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">CTS</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Nuxeo</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">SOAP WS</span>
+          </div>
+        </div>
+        
+        <!-- Programmation -->
+        <div class="animate-fade-in-up delay-100">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-600 rounded-full"></span>
+            Programmation
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Java / JavaEE</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">TypeScript</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">JavaScript</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">PHP</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Python</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">C/C++</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Bash</span>
+          </div>
+        </div>
+        
+        <!-- Web & Frameworks -->
+        <div class="animate-fade-in-up delay-200">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+            Web & Frameworks
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">HTML/CSS</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Bootstrap</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Laravel</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Spring Boot</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">jQuery</span>
+          </div>
+        </div>
+        
+        <!-- DevOps & Outils -->
+        <div class="animate-fade-in-up">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-cyan-600 rounded-full"></span>
+            DevOps & Outils
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Jenkins</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Ansible</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Git / GitLab</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Jira / xRay</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Confluence</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">VSCode</span>
+          </div>
+        </div>
+        
+        <!-- Bases de données -->
+        <div class="animate-fade-in-up delay-100">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-orange-600 rounded-full"></span>
+            Bases de données
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Oracle</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">PostgreSQL</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">MySQL</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">ora2pg</span>
+          </div>
+        </div>
+        
+        <!-- Système & Méthodes -->
+        <div class="animate-fade-in-up delay-200">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-rose-600 rounded-full"></span>
+            Système & Méthodes
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Linux RHEL 8</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Windows</span>
+            <span class="skill-tag px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-mono transition-colors">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Expériences</h2>
+        <p class="text-lg text-gray-600">Un parcours en environnements exigeants.</p>
+      </div>
+      
+      <div class="space-y-8">
+        <!-- Experience 1 -->
+        <div class="relative pl-8 border-l-2 border-blue-200 animate-fade-in-up">
+          <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <div class="flex flex-wrap justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold text-gray-900">TMA ORANO</h3>
+              <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2024 – Présent</span>
+            </div>
+            <p class="text-blue-600 font-medium mb-3">Consultant Documentum</p>
+            <p class="text-gray-600 mb-4">Support TMA : gestion des tickets correctifs et évolutifs sur les applications Documentum.</p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Analyse et résolution d'incidents techniques, mise en œuvre des correctifs</li>
+              <li>• Implémentation des évolutions fonctionnelles et suivi des performances</li>
+              <li>• Maintenance corrective et préventive, collaboration inter-équipes</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">D2</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">D2-config</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Dqman</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience 2 -->
+        <div class="relative pl-8 border-l-2 border-blue-200 animate-fade-in-up delay-100">
+          <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <div class="flex flex-wrap justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold text-gray-900">Mission EDF</h3>
+              <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2021 – 2024</span>
+            </div>
+            <p class="text-blue-600 font-medium mb-3">Consultant Documentum · Alternance</p>
+            <p class="text-gray-600 mb-4">Migration du Content Server v7.2 → v21.4, migration des flux webservices, gestion de l'obsolescence technique.</p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Installation silencieuse de Documentum et composants (CS, Webtop, xPlore, CTS, PRES)</li>
+              <li>• Déploiement automatisé via Jenkins et Ansible</li>
+              <li>• Développement de web services SOAP et migration des flux</li>
+              <li>• Tests ECM 3.0 : déclaration et suivi des anomalies dans Jira/xRay</li>
+              <li>• Intégration continue et gestion de versions (Git, Jenkins)</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Documentum Webtop</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Linux RHEL8</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Oracle</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Ansible</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Jenkins</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Mycloud / DBaaS</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience 3 -->
+        <div class="relative pl-8 border-l-2 border-blue-200 animate-fade-in-up delay-200">
+          <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <div class="flex flex-wrap justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold text-gray-900">Mairie de Paris</h3>
+              <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2022 · 2 mois</span>
+            </div>
+            <p class="text-blue-600 font-medium mb-3">Consultant Documentum</p>
+            <p class="text-gray-600 mb-4">POC de migration de base de données Oracle → PostgreSQL pour Documentum.</p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Installation de Documentum sous Linux</li>
+              <li>• Réalisation de la migration via ora2pg</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Documentum</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Oracle</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">PostgreSQL</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">ora2pg</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience 4 -->
+        <div class="relative pl-8 border-l-2 border-blue-200 animate-fade-in-up">
+          <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <div class="flex flex-wrap justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold text-gray-900">Sorbonne Nouvelle</h3>
+              <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2021 · 3 mois</span>
+            </div>
+            <p class="text-blue-600 font-medium mb-3">Développeur Web · Stage</p>
+            <p class="text-gray-600 mb-4">Projet d'édition numérique d'archives : outil de recherche dans des textes édités.</p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>• Création d'une base de données avec MySQL Workbench</li>
+              <li>• Développement de l'interface front-end (HTML/CSS/JS/jQuery/PHP)</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">HTML/CSS</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">JavaScript</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">jQuery</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">PHP</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">MySQL</span>
+              <span class="px-2 py-1 bg-gray-200 rounded text-xs font-mono">Scrum</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Certifications</h2>
+        <p class="text-lg text-gray-600">Certifié et reconnu par l'industrie.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4 animate-fade-in-up">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Documentum Business Administrator</p>
+            <p class="text-sm text-gray-500">2024</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4 animate-fade-in-up delay-100">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Nuxeo Fundamentals Certification</p>
+            <p class="text-sm text-gray-500">2024</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4 animate-fade-in-up delay-200">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Nuxeo Backend Basics Certification</p>
+            <p class="text-sm text-gray-500">2024</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4 animate-fade-in-up">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Nuxeo Studio Advanced Certification</p>
+            <p class="text-sm text-gray-500">2024</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4 animate-fade-in-up delay-100 md:col-span-2">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Formation ANY by C6</p>
+            <p class="text-sm text-gray-500">2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formation Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Formation</h2>
+        <p class="text-lg text-gray-600">Des bases académiques solides.</p>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 animate-fade-in-up">
+          <div class="flex flex-wrap justify-between items-start mb-2">
+            <h3 class="text-xl font-semibold text-gray-900">Master Architecte Logiciel — Développeur d'Applications</h3>
+            <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2021 – 2023</span>
+          </div>
+          <p class="text-gray-600">ETNA – Paris-Ivry</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 animate-fade-in-up delay-100">
+          <div class="flex flex-wrap justify-between items-start mb-2">
+            <h3 class="text-xl font-semibold text-gray-900">Licence 2 & 3 Informatique</h3>
+            <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2019 – 2021</span>
+          </div>
+          <p class="text-gray-600">Université d'Évry – Évry-Courcouronnes</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 animate-fade-in-up delay-200">
+          <div class="flex flex-wrap justify-between items-start mb-2">
+            <h3 class="text-xl font-semibold text-gray-900">Licence 1 Informatique</h3>
+            <span class="text-sm font-mono bg-blue-100 text-blue-800 px-3 py-1 rounded-full">2018 – 2019</span>
+          </div>
+          <p class="text-gray-600">Université Paris Est Créteil – Val-de-Marne</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
+        <p class="text-lg text-gray-600">
+          Parlons de votre projet.<br/>
+          Disponible pour des missions en freelance, du conseil Documentum ou des projets de développement. Je réponds sous 24h.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-6 animate-fade-in-up">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">Email</p>
+              <a href="mailto:achoui.hillal@gmail.com" class="text-blue-600 hover:underline">achoui.hillal@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">Téléphone</p>
+              <a href="tel:+33753133759" class="text-blue-600 hover:underline">07 53 13 37 59</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">Localisation</p>
+              <p class="text-gray-600">Île-de-France</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">LinkedIn</p>
+              <a href="https://linkedin.com/in/hillal-achoui" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">linkedin.com/in/hillal-achoui</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="animate-fade-in-up delay-100">
+          <form 
+            action="https://formspree.io/f/maqkbydg" 
+            method="POST"
+            class="space-y-4"
+          >
+            <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio">
+            <input type="hidden" name="_cc" value="achoui.hillal@gmail.com">
+            
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+              <input type="text" id="name" name="name" required 
+                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" id="email" name="email" required 
+                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+              <input type="text" id="subject" name="subject" required 
+                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" required 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"></textarea>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+              Envoyer le message
+            </button>
+            
+            <!-- Message de confirmation -->
+            <p id="form-status" class="text-sm text-center mt-2 hidden"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-sm">© 2026 Hillal Achoui — Tous droits réservés.</p>
+        <nav class="flex flex-wrap justify-center gap-6 text-sm">
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#experience" class="hover:text-white transition-colors">Parcours</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript pour mobile menu + form feedback -->
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Fermer le menu mobile quand on clique sur un lien
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Form submission feedback
+    const form = document.querySelector('form');
+    const status = document.getElementById('form-status');
+    
+    form?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          status.textContent = '✅ Message envoyé ! Je vous réponds sous 24h.';
+          status.className = 'text-sm text-center mt-2 text-green-600 font-medium';
+          form.reset();
+        } else {
+          status.textContent = '❌ Erreur. Réessayez ou contactez-moi directement par email.';
+          status.className = 'text-sm text-center mt-2 text-red-600 font-medium';
+        }
+      } catch (error) {
+        status.textContent = '❌ Problème de connexion. Veuillez réessayer.';
+        status.className = 'text-sm text-center mt-2 text-red-600 font-medium';
+      }
+      status.classList.remove('hidden');
+      
+      // Masquer le message après 5 secondes
+      setTimeout(() => {
+        status.classList.add('hidden');
+      }, 5000);
+    });
+    
+    // Animation au scroll (fade-in simple)
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.service-card, .skill-tag, .animate-fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
